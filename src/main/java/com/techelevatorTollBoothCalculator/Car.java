@@ -1,4 +1,4 @@
-package com.techelevator;
+package com.techelevatorTollBoothCalculator;
 
 public class Car implements Vehicle {
 	
@@ -15,7 +15,18 @@ public class Car implements Vehicle {
 		this.hasTrailer = hasTrailer;
 		this.distance = distance;
 	}
-//	
+	
+	
+	public String toString() {
+		String formattedToll = String.format("$%.2f", calculateToll(distance));
+		
+		return String.format("%1$-16s %2$-22s %3$s",  "Car", distance, formattedToll);
+	}
+		
+	
+	
+	
+	
 //	toll = distance * 0.020
 //			if pulling a trailer then toll = toll + 1.00
 	
@@ -37,12 +48,20 @@ public class Car implements Vehicle {
 	@Override
 	public double calculateToll(int distance) {
 		
-		double toll = distance *0.020;
+		double toll = 0.020* distance;
 		if (hasTrailer) {
 			toll +=1.00;
 		}
 		
 		return toll;
+	}
+
+
+
+	@Override
+	public String getType() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

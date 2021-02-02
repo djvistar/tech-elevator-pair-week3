@@ -1,8 +1,8 @@
-package com.techelevator;
+package com.techelevatorTollBoothCalculator;
 
 public interface Vehicle {
 	
-	String type =null;
+	String getType();
 	
 	
 //method

@@ -11,7 +11,10 @@ public class FexEd implements DeliveryDriver {
 		this.weight = weight;
 	}
 	
-
+	public String toString() {
+		String formattedRate = String.format( "$%.2f", calculateRate(distance, weight));
+		return String.format("%1$-31s %2$s", "FexEd", formattedRate);
+	}
 
 	public int getDistance() {
 		return distance;
@@ -35,6 +38,14 @@ public class FexEd implements DeliveryDriver {
 			rate += 3.00;
 		}
 		return rate;
+	}
+
+
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 

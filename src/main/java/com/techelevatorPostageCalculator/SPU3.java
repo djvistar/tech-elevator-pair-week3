@@ -11,7 +11,13 @@ public class SPU3 implements DeliveryDriver{
 		this.distance = distance;
 	}
 	
-
+	public String toString() {
+		String formattedRate = String.format( "$%.2f", calculateRate(distance, weight));
+		return String.format("%1$-31s %2$s", "SPU (Next Day)", formattedRate);
+	}
+	
+	
+	
 
 	public double getWeight() {
 		return weight;
@@ -34,6 +40,14 @@ public class SPU3 implements DeliveryDriver{
 		}
 	
 		return rate;
+	}
+
+
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 

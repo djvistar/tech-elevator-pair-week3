@@ -1,7 +1,7 @@
 package com.techelevatorPostageCalculator;
 
 public interface DeliveryDriver {
-	String name = null;
+	String getName();
 	
 	double calculateRate(int distance, double weight );
 	

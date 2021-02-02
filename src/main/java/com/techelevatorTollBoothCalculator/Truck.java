@@ -1,4 +1,4 @@
-package com.techelevator;
+package com.techelevatorTollBoothCalculator;
 
 public class Truck implements Vehicle{
 
@@ -19,6 +19,12 @@ public class Truck implements Vehicle{
 	
 	
 	
+	
+	public String toString() {
+		String formattedToll = String.format("$%.2f", calculateToll(distance));
+		
+		return String.format("%1$-16s %2$-22s %3$s", "Truck", distance, formattedToll);
+	}
 	
 	
 	//getter
@@ -41,7 +47,7 @@ public class Truck implements Vehicle{
 	public double calculateToll(int distance) {
 		
 		double ratePerMile = 0.0;
-		double toll = ratePerMile *distance;
+		//double toll = ratePerMile *distance;
 		 
 		if (numberOfAxles < 6) {
 			ratePerMile = 0.040;
@@ -53,7 +59,18 @@ public class Truck implements Vehicle{
 			ratePerMile = 0.048;
 		}
 		
-		return toll;
+		return ratePerMile *distance;
+	}
+
+
+	
+
+
+
+	@Override
+	public String getType() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
